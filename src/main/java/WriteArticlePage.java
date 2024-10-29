@@ -15,7 +15,7 @@ public class WriteArticlePage {
         By MY_LoginBtn = By.xpath("//button[normalize-space()='Login']");
         By Input_txtbox = By.xpath("//div[@class='ProseMirror NgxEditor__Content']");
         By Article = By.xpath("//a[normalize-space()='ARTICLE']");
-        By TitleTxtBox = By.cssSelector("//textarea[@class='w-full p-4 titleTextArea text-2xl font-bold ng-pristine ng-invalid ng-touched']");
+        By TitleTxtBox = By.cssSelector("textarea[maxlength$='40']");
         By UploadButton = By.cssSelector("[class='inputFile hidden']");
       // By UploadButton = By.xpath("(//div[@class='imageModal absolute inset-0 flex items-center justify-center bg-[#4F4F4F] bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'])[1]");
         By hoverElement = By.xpath("(//div[@class='imageModal absolute inset-0 flex items-center justify-center bg-[#4F4F4F] bg-opacity-50 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300'])[1]");
@@ -60,11 +60,15 @@ public class WriteArticlePage {
        // ((JavascriptExecutor) driver).executeScript("arguments[0].style.display='block';", uploadElement);
 //        uploadElement.click();
         uploadElement.sendKeys(filePath);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+//        JavascriptExecutor js = (JavascriptExecutor) driver;
+//        js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
     }
-
+    public  void scroll() throws InterruptedException {
+        WebElement element = driver.findElement(By.xpath("//body//app-root//app-writers-post//div//div[2]//div[2]"));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+        Thread.sleep(3000);
+    }
 }
 
 

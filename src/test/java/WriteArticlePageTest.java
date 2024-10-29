@@ -22,9 +22,10 @@ public class WriteArticlePageTest {
         Article.Verify_Login();
         Article.clickOn_Article();
         Article.write_Article("Cloud deployments and SaaS offerings have moved many workload deployments out of the data center.");
-       Article.Enter_TitleTxt("World's Class Blog Post");
 //        Article.scrollDown();
         Thread.sleep(5000);
-        Article.UploadPicture("C:\\Users\\HarunaIbrahimKonlan\\Downloads\\B4.jpeg");
+        Article.UploadPicture("C:\\Users\\HarunaIbrahimKonlan\\Downloads\\OIP.jpeg");
+        Article.scroll();
+        Article.Enter_TitleTxt("World's Class Blog Post");
     }
 }
