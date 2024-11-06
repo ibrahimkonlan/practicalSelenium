@@ -12,7 +12,7 @@ public class WriteArticlePage {
         this.driver = driver;
     }
 
-        By MY_LoginBtn = By.xpath("//button[normalize-space()='Login']");
+        By MY_LoginBtn = By.xpath("//button[normalize-space()='Sign In']");
         By Input_txtbox = By.xpath("//div[@class='ProseMirror NgxEditor__Content']");
         By Article = By.xpath("//a[normalize-space()='ARTICLE']");
         By TitleTxtBox = By.cssSelector("textarea[maxlength$='40']");
